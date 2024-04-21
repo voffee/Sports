@@ -3,7 +3,7 @@
 :root {
     --primary: #FFEFBA;
     --secondary: #FFFFFF;
-    --complementary: #BACAFF;
+    --complementary: #f8f8f8;
     --dark: #252321;
     --delete-color: #FF1B2D;
 }
@@ -24,6 +24,16 @@ body {
     background: linear-gradient(90deg, var(--primary), var(--secondary));
 }
 
+h1 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    font-size: 46px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px var(--dark);
+    margin-bottom: 20px;
+    color: var(--delete-color);
+}
+
 .container {
 
     display: flex;
@@ -31,21 +41,70 @@ body {
     align-items: center;
     justify-content: center;
     border: 1.5px solid var(--dark);
-    border-radius: 1.5px;
+    border-radius: 5px;
     height: 375px;
 }
 
 ul {
     list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
 }
 
 li {
-    width: 275px;
+    /* width: 275px; */
     padding: 5px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    font-style: normal;
+    border: 1.5px solid var(--dark);
+    border-radius: 5px;
 }
 
-.delete {
-    padding: 1.5px;
-    margin-left: 175px;
-    background-color: var(--delete-color)
+.list-container {
+   
 }
+
+.input-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    width: 275px;
+    height: 50px;
+
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.input {
+    height: 25px;
+    
+}
+.input::placeholder {
+    text-align: center;
+    font-family: "Esteban", serif;
+    font-style: normal;
+    
+}
+
+/* Button Styling */
+.btn-delete {
+    padding: 1.5px;
+    margin-left: 145px;
+    background-color: var(--delete-color);
+}
+
+.btn-submit {
+    padding: 1.5px;
+    background: var(--complementary);
+    opacity: 0.85;
+    border: 1.5px solid var(--dark);
+}
+
