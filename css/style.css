@@ -1,0 +1,51 @@
+
+/* Root Variables */
+:root {
+    --primary: #FFEFBA;
+    --secondary: #FFFFFF;
+    --complementary: #BACAFF;
+    --dark: #252321;
+    --delete-color: #FF1B2D;
+}
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+}
+
+.container {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid var(--dark);
+    border-radius: 1.5px;
+    height: 375px;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    width: 275px;
+    padding: 5px;
+}
+
+.delete {
+    padding: 1.5px;
+    margin-left: 175px;
+    background-color: var(--delete-color)
+}
