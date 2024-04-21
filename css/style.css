@@ -1,10 +1,11 @@
 
 /* Root Variables */
 :root {
-    --primary: #FFEFBA;
-    --secondary: #FFFFFF;
+    --primary: #FD746C;
+    --secondary: #FF9068;
     --complementary: #f8f8f8;
     --dark: #252321;
+    --light: #FFFFFF;
     --delete-color: #FF1B2D;
 }
 
@@ -29,13 +30,12 @@ h1 {
     font-weight: 300;
     font-size: 46px;
     text-transform: uppercase;
-    text-shadow: 2px 2px var(--dark);
+    text-shadow: 2px 2px var(--light);
     margin-bottom: 20px;
-    color: var(--delete-color);
+    color: var(--dark);
 }
 
 .container {
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,6 +43,7 @@ h1 {
     border: 1.5px solid var(--dark);
     border-radius: 5px;
     height: 375px;
+    background-color: var(--light);
 }
 
 ul {
@@ -85,13 +86,17 @@ li {
 
 .input {
     height: 25px;
+    outline: none;
     
 }
 .input::placeholder {
     text-align: center;
     font-family: "Esteban", serif;
     font-style: normal;
-    
+}
+
+.input:focus {
+    border: 1px solid var(--delete-color);
 }
 
 /* Button Styling */
