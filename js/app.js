@@ -56,7 +56,7 @@ function inputTest() {
 }
 
 // Create addItem function
-function addItem(e) {
+function addItem() {
 
     // Get the input value
     const localInputValue = sportInput.value;
