@@ -119,3 +119,8 @@ li {
     opacity: 0.85;
     border: 1.5px solid var(--dark);
 }
+
+/* List Item Switching Class*/
+.background-switch {
+    background-color: var(--complementary);
+}

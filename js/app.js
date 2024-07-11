@@ -11,6 +11,16 @@ for (let i = 0; i < listItems.length; i++) {
     listItems[i].addEventListener('click', function(e)
     {
         console.log('Sport: ' + e.target.textContent + ', ID: ' + e.target.id);
+
+        // Use toggle to switch classes
+        e.target.classList.toggle("background-switch")
+
+        // Remember how ternary operator works
+        // REMEMBER HOW TO USE classList.contains & ternary operator
+        // e.target.classList.contains("background-switch")
+        // ? e.target.classList.remove("background-switch")
+        // : e.target.classList.add("background-switch")
+
     });
 }
 
@@ -19,12 +29,8 @@ for (let i = 0; i < deleteButton.length; i++) {
 
 }
 
-submit.addEventListener('click', addItem);
-
-sportInput.addEventListener('input', () => {
-    let inputValue = sportInput.value;
-    console.log(inputValue);
-})
+// Listen for submit button activation and call combinedHandler function
+submit.addEventListener('click', combinedHandler);
 
 // Create removeItem function
 function removeItem(e) {
@@ -37,8 +43,23 @@ function removeItem(e) {
     }
 }
 
+// Create combinedHandler function
+function combinedHandler() {
+    inputTest();
+    addItem();
+}
+
+// Create inputTest function
+function inputTest() {
+    let x = sportInput.value;
+    console.log(x);
+}
+
 // Create addItem function
 function addItem(e) {
+
+    // Get the input value
+    const localInputValue = sportInput.value;
     
     // Create list element
     const newListItem = document.createElement('li');
@@ -46,8 +67,11 @@ function addItem(e) {
     // Create button element
     const newButton = document.createElement('button');
 
+    // Create list text content
+    newListItem.textContent = localInputValue;
+
     // Add list attributes
-    newListItem.id = inputValue;
+    newListItem.id = localInputValue;
 
     // Create button text content
     newButton.textContent = 'Delete';
