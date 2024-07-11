@@ -8,20 +8,7 @@ const submit = document.querySelector('.btn-submit');
 
 // Add event listeners
 for (let i = 0; i < listItems.length; i++) {
-    listItems[i].addEventListener('click', function(e)
-    {
-        console.log('Sport: ' + e.target.textContent + ', ID: ' + e.target.id);
-
-        // Use toggle to switch classes
-        e.target.classList.toggle("background-switch")
-
-        // Remember how ternary operator works
-        // REMEMBER HOW TO USE classList.contains & ternary operator
-        // e.target.classList.contains("background-switch")
-        // ? e.target.classList.remove("background-switch")
-        // : e.target.classList.add("background-switch")
-
-    });
+    listItems[i].addEventListener('click', combinedOutputToggle);
 }
 
 for (let i = 0; i < deleteButton.length; i++) {
@@ -31,6 +18,22 @@ for (let i = 0; i < deleteButton.length; i++) {
 
 // Listen for submit button activation and call combinedHandler function
 submit.addEventListener('click', combinedHandler);
+
+
+// Create combinedOutputToggle function
+function combinedOutputToggle(e) {
+    console.log('Sport: ' + e.target.textContent + ', ID: ' + e.target.id);
+
+    // Use toggle to switch classes
+    e.target.classList.toggle("background-switch")
+
+    // Remember how ternary operator works
+    // REMEMBER HOW TO USE classList.contains & ternary operator
+    // e.target.classList.contains("background-switch")
+    // ? e.target.classList.remove("background-switch")
+    // : e.target.classList.add("background-switch")
+
+}
 
 // Create removeItem function
 function removeItem(e) {
@@ -56,7 +59,7 @@ function inputTest() {
 }
 
 // Create addItem function
-function addItem() {
+function addItem(e) {
 
     // Get the input value
     const localInputValue = sportInput.value;
@@ -88,4 +91,5 @@ function addItem() {
     mainList.appendChild(newListItem);
 
     newButton.addEventListener('click', removeItem);
+    newListItem.addEventListener('click', combinedOutputToggle);
 }
